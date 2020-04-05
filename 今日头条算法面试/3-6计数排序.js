@@ -22,3 +22,5 @@ function countingSort (A) {
 }
 
 console.log(countingSort([9,8,7,6]))
+
+
