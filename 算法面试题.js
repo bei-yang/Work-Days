@@ -201,3 +201,15 @@ function parse (url) {
   }, {})
 }
 
+
+
+function parse (url) {
+  return url.split('?').split('=').reduce((o, kv) => {
+    let [key, value] = o.split('=')
+    if (!value) {
+      return o
+    }
+    o[key] = value
+    return o
+  }, {})
+}
