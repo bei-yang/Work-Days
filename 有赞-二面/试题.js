@@ -57,23 +57,86 @@ const options = [
   ]
  */
 
-
-function flattenTree (objArr, arr1 = [], arr2 = []) {
-  for (let i in objArr) {
-    if (objArr[i].children) {
-      arr2.push(delChildren(objArr[i]))
-      flattenTree(objArr[i].children, arr1, arr2)
-    } else {
-      arr2.push(objArr[i])
-      arr1.push(JSON.parse(JSON.stringify(arr2)))
-      if (i == objArr.length - 1) {
-        arr2 = []
-      } else {
-        arr2.pop()
-      }
-    }
-  }
-  return arr1
-}
+// function flattenTree (data, arr) {
+//   if (!arr) {
+//     arr = []
+//     for (let i = 0; i < data.length; i++) {
+//       arr[i] = []
+//       flattenTree(data[i], arr[i])
+//     }
+//     return arr
+//   }
+//   arr.push({ value: data.value, label: data.label })
+//   if (!data.children) return
+//   for (let j = 0; j < data.children.length; j++) {
+//     flattenTree(data.children[j], arr)
+//   }
+// }
 
 console.log(flattenTree(options))
+
+function flattenTree (data, arr) {
+  if (!arr) {
+    arr = []
+    for (let i = 0; i < data.length; i++) {
+      arr[i] = []
+      flattenTree(data[i], arr[i])
+    }
+    return arr
+  }
+  arr.push({ value: data.value, label: data.label })
+  if (!data.children) return
+  for (let j = 0; j < data.children.length; j++) {
+    flattenTree(data.children[j], arr)
+  }
+}
+
+function flattenTree (data, arr) {
+  if (!arr) {
+    arr = []
+    for (let i = 0; i < data.length; i++) {
+      arr[i] = []
+      flattenTree(data[i], arr[i])
+    }
+    return arr
+  }
+  arr.push({ value: data.value, label: data.label })
+  if (!data.children) return
+  for (let j = 0; j < data.children.length; j++) {
+    flattenTree(data.children[j], arr)
+  }
+}
+
+function flattenTree (data, arr) {
+  if (!arr) {
+    arr = []
+    for (let i = 0; i < data.length; i++) {
+      arr[i] = []
+      flattenTree(data[i], arr[i])
+    }
+    return arr
+  }
+  arr.push({ value: data.value, label: data.label })
+  if (!data.children) return
+  for (let j = 0; j < data.children.length; j++) {
+    flattenTree(data.children[j], arr)
+  }
+}
+
+function flattenTree (data, arr) {
+  if (!arr) {
+    arr = []
+    for (let i = 0; i < data.length; i++) {
+      arr[i] = []
+      flattenTree(data[i], arr[i])
+    }
+    return arr
+  }
+  arr.push({ value: data.value, label: data.label })
+  if (!data.children) return
+  for (let j = 0; j < data.children.length; j++) {
+    flattenTree(data.children[j], arr)
+  }
+}
+
+

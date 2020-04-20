@@ -82,4 +82,33 @@ var findWords = function (board, words) {
   return result
 }
 
-// 11111
+var exist = function (board, word) {
+  const rowNum = board.length
+  const colNum = board[0].length
+
+  for (let i = 0; i < rowNum; i++) {
+    for (let j = 0; j < colNum; j++) {
+      if (board[i][j] === word[0]) {
+        const isExist = _exist(board, word, i, j, {})
+        if (isExist) return true
+      }
+    }
+  }
+
+  return false
+}
+
+function _exist (board, word, row, col, visited) {
+  if (!word.length) {
+    return true
+  }
+  const key = `${row}-${col}`
+  if (row >= board.length || row < 0 || col >= board[0].length || col < 0 || visited[key] || board[row][col] !== word[0]) {
+    return false
+  }
+  visited[key] = true
+  word = word.slice(1)
+  const success = _exist(board, word, row + 1, col, visited) || _exist(board, word, row - 1, col, visited) || _exist(board, word, row, col + 1, visited) || _exist(board, word, row, col - 1, visited)
+  visited[key] = success
+  return success
+}
