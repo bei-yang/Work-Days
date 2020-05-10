@@ -48,15 +48,73 @@ const options = [
   }
 ];
 
-function flattenTree(arr, sum = []) {
+function flattenTree (arr, sum = []) {
   const result = [];
 
   arr.forEach(item => {
-      const path = sum.concat()
-      if (item.children) {
-          
-      } else {
-          result.push({value:item.value,label:item.label})
-      }
+    const path = sum.concat()
+    if (item.children) {
+
+    } else {
+      result.push({ value: item.value, label: item.label })
+    }
   });
+}
+
+
+
+
+
+console.log('script start')
+
+async function async1 () {
+  await async2()
+  console.log('async1 end')
+}
+async function async2 () {
+  console.log('async2 end')
+}
+async1()
+
+setTimeout(() => {
+  console.log('setTimeout')
+}, 0);
+
+new Promise(resolve => {
+  console.log('Promise')
+  resolve()
+})
+  .then(function () {
+    console.log('promise1')
+  })
+  .then(() => {
+    console.log('promise2')
+  })
+
+console.log('script end')
+
+// 实现一个instanceOf
+
+function instanceOf (L, R) {
+  let o = R.prototype
+  L = L.__proto__
+  while (true) {
+    if (L === null) return false
+    if (o === L) {
+      return true
+    }
+    L = L.__proto__
+  }
+}
+
+function instancdOf (L, R) {
+  let O = R.prototype
+  L = L.__proto__
+  while (true) {
+    if (L === null) return false
+    if (O === L) {
+      return true
+    }
+    L = L.__proto__
+  }
 }
