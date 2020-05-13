@@ -1,0 +1,107 @@
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+  <style type="text/css">
+    .container {
+      width: 100px;
+      height: 100px;
+    }
+
+    .square {
+      /* width: 100%; */
+      padding-bottom: 100%;
+      background: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="square">
+    </div>
+  </div>
+</body>
+
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+  <style type="text/css">
+    .square {
+      width: 100px;
+      background: green;
+    }
+
+    .square:after {
+      content: '';
+      display: block;
+      padding-bottom: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="square">123
+  </div>
+</body>
+
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .arrow-right {
+      margin: 500px auto;
+      width: 300px;
+      height: 80px;
+      background-color: pink;
+      padding-left: 20px;
+    }
+
+    .arrow-right::after {
+      background-color: pink;
+      content: "";
+      display: block;
+      width: 0;
+      height: 0;
+      border-top: 10px solid #fff;
+      border-bottom: 10px solid #fff;
+      border-left: 20px solid pink;
+      /* border-right: 20px solid transparent; */
+      position: relative;
+      top: 14px;
+      left: 300px;
+    }
+  </style>
+  <!--  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    .spliter::before,
+    .spliter::after {
+      content: '';
+      display: inline-block;
+      border-top: 1px solid black;
+      width: 200px;
+      margin: 10px;
+    }
+  </style> -->
+</head>
+
+<body>
+
+  <!-- <p class="spliter">分割线</p> -->
+  <p class="arrow-right">一起开黑吧？</p>
+</body>
+
+</html>
