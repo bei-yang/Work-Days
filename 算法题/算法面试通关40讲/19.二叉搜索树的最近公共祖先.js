@@ -1,25 +1,26 @@
+// 235
+
 var lowestCommonAncestor = function (root, p, q) {
-  if (root === null) {
-    return root
-  }
-  if (p.val < root.val && root.val > q.val) {
+  if (root === null) return root
+  if (root.val > p.val && root.val > q.val) {
     return lowestCommonAncestor(root.left, p, q)
   }
-  if (p.val > root.val && root.val < q.val) {
+  if (root.val < p.val && root.val < q.val) {
     return lowestCommonAncestor(root.right, p, q)
   }
   return root
 }
 
-var lowestCommonAncestor=function (root,p,q){
-  if(root===null){
+// 236
+
+var lowestCommonAncestor = function (root, p, q) {
+  if (root === null || root === p || root === q) {
     return root
   }
-  if(root.val>p.val&&root.val>q.val){
-    return lowestCommonAncestor(root.left,p,q)
+  let left = lowestCommonAncestor(root.left, p, q)
+  let right = lowestCommonAncestor(root.right, p, q)
+  if (left && right) {
+    return root
   }
-  if(root.val<p.val&&root.val<q.val){
-    return lowestCommonAncestor(root.right,p,q)
-  }
-  return root
-}
+  return left ? left : right
+};
