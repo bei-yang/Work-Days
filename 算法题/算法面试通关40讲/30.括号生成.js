@@ -38,7 +38,7 @@ console.log(generateParenthesis(3))
 function generateParenthesis (n) {
   if (n === 1) return ['()']
   const list = []
-  const _gen = function (left, right, n, res) {
+  const _gen = function (left, right, res) {
     if (left === n && right === n) {
       return list.push(res)
     }
@@ -49,6 +49,6 @@ function generateParenthesis (n) {
       _gen(left, right + 1, n, res + ')')
     }
   }
-  _gen(0, 0, n, '')
+  _gen(0, 0, '')
   return list
 }
