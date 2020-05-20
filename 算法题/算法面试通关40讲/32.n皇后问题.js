@@ -57,3 +57,24 @@ var solveNQueens = function (n) {
   recurison(0, [])
   return generateCheckerboard()
 }
+
+
+var solveNQueens3 = function (n) {
+  let result = [];
+  function dfs (cols) {
+    console.log(1, cols)
+    let row = cols.length;
+    console.log(2, row)
+    if (row === n) return result.push(cols.map(col => '.'.repeat(col) + 'Q' + '.'.repeat(n - col - 1)));
+    for (let col = 0; col < n; col++) {
+      console.log(3, col)
+      if (cols.some((exCol, exRow) => (exCol === col || exRow - exCol === row - col || exRow + exCol === row + col))) continue;
+      console.log(4, cols.concat(col))
+      dfs(cols.concat(col))
+    }
+  }
+  dfs([]);
+  return result;
+};
+
+console.log(solveNQueens3(4))
