@@ -6,33 +6,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>example</title>
-  <script src="./MVVM.js" charset="utf-8"></script>
+  <script src="./lvue.js" charset="utf-8"></script>
 </head>
 
 <body>
-  <div id="mvvm">
-    <h2>{{b}}</h2>
-    <input type="text" x-model="a">
-    <input type="text" name="" value="" x-model="a">
-    <p x-html="a">{{ a }}</p>
-    <button type="button" name="button" x-on:click="testToggle">change b</button>
+  <div id="app">
+    <p>{{name}}</p>
+    <p k-text="name"></p>
+    <p>{{age}}</p>
+    <p>
+      {{doubleAge}}
+    </p>
+    <input type="text" k-model="name">
+    <button @click="changeName">呵呵</button>
+    <div k-html="html"></div>
   </div>
-</body>
-<script>
-  var vm = new MVVM({
-    el: '#mvvm',
-    data: {
-      a: 'test model',
-      b: 'hello MVVM',
-      flag: true
-    },
-    methods: {
-      testToggle: function () {
-        this.flag = !this.flag;
-        this.b = this.flag ? 'hello MVVM' : 'test success'
+  <script src='./compile.js'></script>
+  <script src='./lvue.js'></script>
+
+  <script>
+    let k = new KVue({
+      el: '#app',
+      data: {
+        name: 'i am test',
+        age: 12,
+        html: '<button>这是一个按钮</button>'
+      },
+      created() {
+        console.log('开始啦')
+        setTimeout(() => {
+          this.name = '我是蜗牛'
+        }, 1600)
+      },
+      methods: {
+        changeName() {
+          this.name = 'changed name',
+            this.age = 1,
+            this.id = 'xxx'
+          console.log(1, this)
+        }
       }
-    }
-  });
-</script>
+    })
+  </script>
+</body>
 
 </html>
