@@ -13,56 +13,10 @@
 
 你是否可以在 O(1) 时间复杂度内完成这两种操作？
 */
-
-var LRUCache = function (capacity) {
-  this.keys = []
-  this.cache = Object.create(null)
-  this.capacity = capacity
-}
-
-LRUCache.prototype.get = function (key) {
-  if (this.cache[key]) {
-    remove(this.keys, key)
-    this.keys.push(key)
-    return this.cache[key]
-  }
-  return -1
-}
-
-LRUCache.prototype.put = function (key, value) {
-  if (this.cache[key]) {
-    this.cache[key] = value
-    remove(this.keys, key)
-    this.keys.push(key)
-  } else {
-    this.keys.push(key)
-    this.cache[key] = value
-    if (this.keys.length > this.capacity) {
-      removeCache(this.cache, this.keys, this.keys[0])
-    }
-  }
-}
-
-function remove (arr, key) {
-  if (arr.length) {
-    const index = arr.indexOf(key)
-    if (index > -1) {
-      return arr.splice(index, 1)
-    }
-  }
-}
-
-function removeCache (cache, keys, key) {
-  cache[key] = null
-  remove(keys, key)
-}
-
-
 var LRUCache = function (capacity) {
   this.cache = new Map()
-  this.capacity = capacity
+  this.c = capacity
 }
-
 LRUCache.prototype.get = function (key) {
   if (this.cache.has(key)) {
     let temp = this.cache.get(key)
@@ -72,11 +26,10 @@ LRUCache.prototype.get = function (key) {
   }
   return -1
 }
-
 LRUCache.prototype.put = function (key, value) {
   if (this.cache.has(key)) {
     this.cache.delete(key)
-  } else if (this.cache.size >= this.capacity) {
+  } else if (this.cache.size >= this.c) {
     this.cache.delete(this.cache.keys().next().value)
   }
   this.cache.set(key, value)
