@@ -28,6 +28,19 @@
 3 <= logs[i].length <= 100
 logs[i] 保证有一个标识符，并且标识符后面有一个字。 */
 
-var reorderLogFiles = function(logs) {
-  
+var reorderLogFiles = function (logs) {
+  let strArr = []
+  let numArr = []
+  for (let i = 0; i < logs.length; i++) {
+    const log = logs[i]
+    if (+(log.substring(log.indexOf(' '), log.length).replace(/[\s]/g, ''))) {
+      numArr.push(log)
+    } else {
+      strArr.push(log)
+    }
+  }
+  strArr.sort((cStr, nStr) => {
+    return cStr.substring(cStr.indexOf(' '), cStr.length) < nStr.substring(nStr.indexOf(' '), nStr.length) ? -1 : 1
+  })
+  return strArr.concat(numArr)
 };
