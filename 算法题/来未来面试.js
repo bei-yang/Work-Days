@@ -135,5 +135,89 @@
 // }]))
 
 function print (list) {
-``
+  let tree = {}
+  const buildTree = function (list) {
+    let temp = {}
+    for (let i in list) {
+      temp[list[i].id] = list[i]
+    }
+    for (let i in temp) {
+      if (Number(temp[i].parentId)) {
+        if (!temp[temp[i].parentId].children) {
+          temp[temp[i].parentId].children = new Object()
+        }
+        temp[temp[i].parentId].children[temp[i].id] = temp[i]
+      } else {
+        tree[temp[i].id] = temp[i]
+      }
+    }
+  }
+  const printItem = function (tree, level = '') {
+    console.log(2, tree)
+    for (let i in tree) {
+      console.log(level + tree[i].name)
+      if (tree[i].children) {
+        level += '  '
+        printItem(tree[i].children)
+      }
+    }
+  }
+  buildTree(list)
+  console.log(1, tree)
+  printItem(tree)
 }
+
+console.log('answer:', print([
+  { id: 1001, parentId: 0, name: 'AA' },
+  { id: 1002, parentId: 1001, name: 'BB' },
+  { id: 1006, parentId: 1002, name: 'FF' },
+  { id: 1007, parentId: 1002, name: 'GG' },
+  { id: 1008, parentId: 1004, name: 'HH' },
+  { id: 1003, parentId: 1001, name: 'CC' },
+  { id: 1004, parentId: 1003, name: 'DD' },
+  { id: 1005, parentId: 1003, name: 'EE' },
+  { id: 1009, parentId: 1005, name: 'II' }
+]))
+
+
+function print (list) {
+  const buildTree = function (list) {
+    let tree = {}
+    let temp = {}
+    for (let i in list) {
+      temp[list[i].id] = list[i]
+    }
+    for (let i in temp) {
+      if (Number(temp[i].parentId)) {
+        if (!temp[temp[i].parentId].children) {
+          temp[temp[i].parentId].children = new Object()
+        }
+        temp[temp[i].parentId].children[temp[i].id] = temp[i]
+      } else {
+        tree[temp[i].id] = temp[i]
+      }
+    }
+    return tree
+  }
+  const printItem = function (tree, level='') {
+    for (let i in tree) {
+      console.log(level + tree[i].name)
+      if (tree[i].children) {
+        printItem(tree[i].children,level+'  ')
+      }
+    }
+  }
+  printItem(buildTree(list))
+}
+
+print([
+  { id: 1001, parentId: 0, name: 'AA' },
+  { id: 1002, parentId: 1001, name: 'BB' },
+  { id: 1006, parentId: 1002, name: 'FF' },
+  { id: 1007, parentId: 1002, name: 'GG' },
+  { id: 1008, parentId: 1004, name: 'HH' },
+  { id: 1003, parentId: 1001, name: 'CC' },
+  { id: 1004, parentId: 1003, name: 'DD' },
+  { id: 1005, parentId: 1003, name: 'EE' },
+  { id: 1009, parentId: 1005, name: 'II' }
+])
