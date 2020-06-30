@@ -8,7 +8,7 @@
       "type": "node",
       "request": "launch",
       "name": "启动程序",
-      "program": "${workspaceFolder}"
+      "program": "${workspaceFolder}/算法题/leetCode-字节跳动算法题/4.字符串相乘.js"
     }
   ]
 }
