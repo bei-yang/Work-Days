@@ -33,7 +33,7 @@ class KVue {
 
     this.observe(val) // 递归解决数据的嵌套
 
-    const dep = new Dep()
+    const dep = new Dep() // 每执行一次 defineReactive，就创建一个 Dep 实例
 
     Object.defineProperty(obj, key, { // 数据劫持
       configurable: true,
@@ -77,7 +77,7 @@ class Dep {
     this.deps.forEach(dep => dep.update())
   }
 }
-// Watcher:
+// Watcher:小秘书，界面中的一个依赖对应一个小秘书
 class Watcher {
   constructor(vm, key, cb) {
     this.vm = vm

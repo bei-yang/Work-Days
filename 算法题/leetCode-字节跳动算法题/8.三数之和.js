@@ -63,3 +63,32 @@ var threeSum = function (nums) {
   }
   return result
 }
+
+
+var threeSum = function (nums) {
+  let result = []
+  let len = nums.length
+  if (len < 3 || nums === null) return result
+  nums.sort((a, b) => a - b)
+  for (let i = 0; i < len; i++) {
+    if (nums[i] > 0) break
+    if (i > 0 && nums[i] === nums[i - 1]) continue
+    var L = i + 1
+    var R = len - 1
+    while (L < R) {
+      var sum = nums[i] + nums[L] + nums[R]
+      if (sum === 0) {
+        result.push([nums[i], nums[L], nums[R]])
+        while (nums[L] === nums[L + 1]) L++
+        while (nums[R] === nums[R - 1]) R--
+        L++
+        R--
+      }else if(sum<0){
+        L++
+      }else{
+        R--
+      }
+    }
+  }
+  return result
+}

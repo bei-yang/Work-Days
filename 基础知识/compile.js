@@ -59,6 +59,25 @@ class Compile {
       }
     })
   }
+  // 事件处理器
+  eventHandler (node, vm, exp, dir) {
+    let fn = vm.$options.methods && vm.$options.methods[exp]
+    if (dir && fn) {
+      node.addEventListener(dir, fn.bind(vm))
+    }
+  }
+  // 双绑
+  model (node, vm, exp) {
+    // 指定 input 的 value 属性
+    this.update(node, vm, exp, 'model')
+    // 视图对模型响应
+    node.addEventListener('input', e => {
+      vm[exp] = e.target.value
+    })
+  }
+  modelUpdater (node, value) {
+    node.value = value
+  }
   compileText (node) {
     console.log(RegExp.$1)
     // node.textContent = this.$vm.$data[RegExp.$1]
@@ -83,27 +102,8 @@ class Compile {
   text (node, vm, exp) {
     this.update(node, vm, exp, 'text')
   }
-  // 双绑
-  model (node, vm, exp) {
-    // 指定 input 的 value 属性
-    this.update(node, vm, exp, 'model')
-    // 视图对模型响应
-    node.addEventListener('input', e => {
-      vm[exp] = e.target.value
-    })
-  }
-  modelUpdater (node, value) {
-    node.value = value
-  }
   textUpdater (node, value) {
     node.textContent = value
-  }
-  // 事件处理器
-  eventHandler (node, vm, exp, dir) {
-    let fn = vm.$options.methods && vm.$options.methods[exp]
-    if (dir && fn) {
-      node.addEventListener(dir, fn.bind(vm))
-    }
   }
   isDirective (attr) {
     return attr.indexOf('k-') === 0

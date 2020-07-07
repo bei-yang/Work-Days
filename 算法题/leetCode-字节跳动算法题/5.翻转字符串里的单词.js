@@ -15,3 +15,15 @@ var reverseWords = function (s) {
 console.log(reverseWords('a good     ex'))
 
 
+
+
+
+var reverseWords = function (s) {
+  // return s.trim().split(/\s+/g).reverse().join('')
+
+  return s.trim().split(/\s+/g).reverse().join('')
+}
+
+var reverseWords = function (s) {
+  return s.trim().split(/\s+/g).reverse().join('')
+}
