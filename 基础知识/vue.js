@@ -169,3 +169,26 @@ class Compile {
 
 
 // 冬瓜冬瓜我是西瓜
+
+
+
+
+// you can you up
+
+// 根据loading值，改变loading UI页面的展示与隐藏
+export function loading (loading, errorCallback = Function.prototype) {
+  return function (target, name, descriptor) {
+    // 获取装饰器函数的参数描述
+    const preFn = descriptor.value
+    descriptor.value = async function (...args) {
+      try {
+        this[loading] = true  // loading加载
+        await preFn.apply(this, args)
+      } catch (error) {
+        console.error(`${target}:${name}:error`)
+      } finally {
+        this[loading] = false
+      }
+    }
+  }
+}
