@@ -1,33 +1,105 @@
-// function sum (x) {
-//   console.log('x:', ...arguments)
-//   if (arguments.length === 1) return x
-//   let arr = [...arguments]
-//   let sum = arr.reduce((pre, item) => {
-//     return pre + item
-//   })
-//   return sum
+// function sum () {
+//   let args = [...arguments]
+//   function add () {
+//     function _add () {
+//       args = [...args, ...arguments]
+//       return add
+//     }
+//     _add.toString = () => {
+//       return args.reduce((pre, item) => pre + item, 0)
+//     }
+//     return _add
+//   }
+//   return add(args)
 // }
 
-function sum (...args) {
-  if ([...args].length == 1) {
-    let sum2 = [...args][0];
-    var suum = function (y) {
-      sum2 += y;
-      // console.log(`output ${sum2}`)
-      return suum;
-    }
-    //suum.valueOf = function () {
-    suum.toString = function () {
-      return sum2;
-    }
-    return suum;
-  } else {
-    let sum1 = 0;
-    for (var i = 0; i < [...args].length; i++) {
-      sum1 += [...args][i];
-    }
-    return sum1
+
+// function sum () {
+//   let args = [...arguments]
+//   function add () {
+//     function _add () {
+//       args = [...args, ...arguments]
+//       return add
+//     }
+//     _add.toString = () => {
+//       return args.reduce((pre, item) => pre + item, 0)
+//     }
+//     return _add
+//   }
+//   return add(args)
+// }
+
+
+// const tasks = []
+// const output = (i) => new Promise((resolve) => {
+//   setTimeout(() => {
+//     console.log(new Date, i)
+//     resolve()
+//   }, 1000 * i)
+// })
+
+// for (let i = 0; i < 5; i++) {
+//   tasks.push(output(i))
+// }
+
+// Promise.all(tasks).then(() => {
+//   setTimeout(() => {
+//     console.log(new Date, i)
+//   }, 1000)
+// })
+
+// const tasks = []
+// const output = (i) => new Promise((resolve) => {
+//   setTimeout(() => {
+//     console.log(new Date, i)
+//     resolve()
+//   }, 1000 * i)
+// })
+
+// for (let i = 0; i < 5; i++) {
+//   tasks.push(output(i))
+// }
+
+// Promise.all(tasks).then(() => {
+//   setTimeout(() => {
+//     console.log(new Date, i)
+//   }, 1000)
+// })
+
+// const tasks = []
+// const output = (i) => new Promise((resolve) => {
+//   setTimeout(() => {
+//     console.log(new Date, i)
+//     resolve()
+//   }, 1000 * i)
+// })
+
+// for (let i = 0; i < 5; i++) {
+//   tasks.push(output(i))
+// }
+
+// Promise.all(tasks).then(() => {
+//   setTimeout(() => {
+//     console.log(new Date, i)
+//   }, 1000)
+// })
+
+class Chain {
+  constructor() {
+
+  }
+  eat () {
+    console.log('eat')
+    return this
+  }
+  sleep () {
+    console.log('sleep', ...arguments)
+    return this
+  }
+  work () {
+    console.log('work')
+    return this
   }
 }
 
-console.log(sum(1)(2)(3))
+console.log(new Chain().eat().sleep(5).eat().sleep(6).work())
