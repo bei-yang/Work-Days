@@ -113,17 +113,97 @@ Function.prototype.bind = function (target) {
 }
 
 
+class Event {
+  constructor() {
+    this.event = {}
+  }
+  // 订阅事件
+  on (eventName, cb) {
+    if (!this.event[eventName]) {
+      this.event[eventName] = []
+    }
+    this.event[eventName].push(cb)
+  }
+  // 触发事件
+  emit (eventName, param) {
+    let eventArr = this.event[eventName]
+    if (eventArr) {
+      eventArr.map(item => {
+        item(param)
+      })
+    }
+  }
+  off (eventName, cb) {
+    let arr = this.event[eventName]
+    if (arr) {
+      if (cb) {
+        let index = arr.indexof(cb)
+        arr.splice(index, 1)
+      } else {
+        arr.length = 0
+      }
+    }
+  }
+}
+
+class Event {
+  constructor() {
+    this.event = {}
+  }
+  on (eventName, cb) {
+    if (!this.event[eventName]) {
+      this.event[eventName] = []
+    }
+    this.event[eventName].push(cb)
+  }
+  emit(eventName,param){
+    let eventArr=this.event[eventName]
+    if(eventArr){
+      eventArr.map(item=>{
+        item(param)
+      })
+    }
+  }
+  off(eventName,cb){
+    let arr=this.event[eventName]
+    if(arr){
+      if(cb){
+        let index=arr.indexof(cb)
+        arr.splice(index,1)
+      }else{
+        arr.length=0
+      }
+    }
+  }
+}
+
 class Event{
   constructor(){
     this.event={}
   }
-  emit(cb,param){
-    if(!this.event[cb]){
-      this.event[cb]=[]
+  on(eventName,cb){
+    if(!this.event[eventName]){
+      this.event[eventName]=[]
     }
-    this.event[cb].push(cb)
+    this.event[eventName].push(cb)
   }
-  on(cb,param){
-    
+  emit(eventName,param){
+    let arr=event[eventName]
+    if(arr.length){
+      arr.map(item=>{
+        item(param)
+      })
+    }
+  }
+  off(eventName,cb){
+    let arr=this.event[eventName]
+    if(arr){
+      if(cb){
+        let index=arr.indexof(cb)
+        arr.splice(index,1)
+      }else{
+        arr.length=0
+      }
+    }
   }
 }
