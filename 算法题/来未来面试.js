@@ -199,11 +199,11 @@ function print (list) {
     }
     return tree
   }
-  const printItem = function (tree, level='') {
+  const printItem = function (tree, level = '') {
     for (let i in tree) {
       console.log(level + tree[i].name)
       if (tree[i].children) {
-        printItem(tree[i].children,level+'  ')
+        printItem(tree[i].children, level + '  ')
       }
     }
   }
@@ -221,3 +221,25 @@ print([
   { id: 1005, parentId: 1003, name: 'EE' },
   { id: 1009, parentId: 1005, name: 'II' }
 ])
+
+
+const jsonp = (url) => {
+  const script = document.createElement('script')
+  script.src = url
+  script.type = 'text/javascript'
+  document.body.appendChild(script)
+}
+
+const jsonp = (url) => {
+  const script = document.createElement('script')
+  script.src = url
+  script.type = 'text/javascript'
+  document.body.appendChild(script)
+}
+
+const jsonp = (url) => {
+  const script = document.createElement('script')
+  script.src = url
+  script.type = 'text/javascript'
+  document.body.appendChild(script)
+}
