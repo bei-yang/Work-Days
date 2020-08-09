@@ -1,0 +1,632 @@
+1234567890
+
+const fs = require('fs');
+const path = require('path');
+// 测试路径
+const sourceDir = './test';
+// 目标路径文件
+const targetFile = './targetTest';
+
+function getDirFilePathArr (dir) {
+  fs.readdir(dir, (err, fileArrLike) => {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    console.log('fileArrLike:', fileArrLike)
+    fileArrLike.forEach((filename) => {
+      fs.stat(path.join(dir, filename), (err, stats) => {
+        if (err) throw err;
+        if (stats.isFile()) {
+          console.log('test1:', path.extname(filename))
+          if (path.extname(filename) === '.txt') {
+            let filePath = path.join(dir, filename);
+            console.log(filePath);
+            appendContentSync(targetFile + '.txt', filePath)
+          }
+        } else {
+          getDirFilePathArr(path.join(dir, filename));
+        }
+      })
+    })
+  })
+}
+
+function appendContentSync (targetFile, file) {
+  let content = fs.readFileSync(file, 'utf-8');
+  console.log(666, content)
+  fs.appendFileSync(targetFile, content)
+}
+getDirFilePathArr(sourceDir);const fs = require('fs');
+const path = require('path');
+// 测试路径
+const sourceDir = './test';
+// 目标路径文件
+const targetFile = './targetTest';
+
+function getDirFilePathArr (dir) {
+  fs.readdir(dir, (err, fileArrLike) => {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    console.log('fileArrLike:', fileArrLike)
+    fileArrLike.forEach((filename) => {
+      fs.stat(path.join(dir, filename), (err, stats) => {
+        if (err) throw err;
+        if (stats.isFile()) {
+          console.log('test1:', path.extname(filename))
+          if (path.extname(filename) === '.txt') {
+            let filePath = path.join(dir, filename);
+            console.log(filePath);
+            appendContentSync(targetFile + '.txt', filePath)
+          }
+        } else {
+          getDirFilePathArr(path.join(dir, filename));
+        }
+      })
+    })
+  })
+}
+
+function appendContentSync (targetFile, file) {
+  let content = fs.readFileSync(file, 'utf-8');
+  console.log(666, content)
+  fs.appendFileSync(targetFile, content)
+}
+getDirFilePathArr(sourceDir);const fs = require('fs');
+const path = require('path');
+// 测试路径
+const sourceDir = './test';
+// 目标路径文件
+const targetFile = './targetTest';
+
+function getDirFilePathArr (dir) {
+  fs.readdir(dir, (err, fileArrLike) => {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    console.log('fileArrLike:', fileArrLike)
+    fileArrLike.forEach((filename) => {
+      fs.stat(path.join(dir, filename), (err, stats) => {
+        if (err) throw err;
+        if (stats.isFile()) {
+          console.log('test1:', path.extname(filename))
+          if (path.extname(filename) === '.txt') {
+            let filePath = path.join(dir, filename);
+            console.log(filePath);
+            appendContentSync(targetFile + '.txt', filePath)
+          }
+        } else {
+          getDirFilePathArr(path.join(dir, filename));
+        }
+      })
+    })
+  })
+}
+
+function appendContentSync (targetFile, file) {
+  let content = fs.readFileSync(file, 'utf-8');
+  console.log(666, content)
+  fs.appendFileSync(targetFile, content)
+}
+getDirFilePathArr(sourceDir);const fs = require('fs');
+const path = require('path');
+// 测试路径
+const sourceDir = './test';
+// 目标路径文件
+const targetFile = './targetTest';
+
+function getDirFilePathArr (dir) {
+  fs.readdir(dir, (err, fileArrLike) => {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    console.log('fileArrLike:', fileArrLike)
+    fileArrLike.forEach((filename) => {
+      fs.stat(path.join(dir, filename), (err, stats) => {
+        if (err) throw err;
+        if (stats.isFile()) {
+          console.log('test1:', path.extname(filename))
+          if (path.extname(filename) === '.txt') {
+            let filePath = path.join(dir, filename);
+            console.log(filePath);
+            appendContentSync(targetFile + '.txt', filePath)
+          }
+        } else {
+          getDirFilePathArr(path.join(dir, filename));
+        }
+      })
+    })
+  })
+}
+
+function appendContentSync (targetFile, file) {
+  let content = fs.readFileSync(file, 'utf-8');
+  console.log(666, content)
+  fs.appendFileSync(targetFile, content)
+}
+getDirFilePathArr(sourceDir);const fs = require('fs');
+const path = require('path');
+// 测试路径
+const sourceDir = './test';
+// 目标路径文件
+const targetFile = './targetTest';
+
+function getDirFilePathArr (dir) {
+  fs.readdir(dir, (err, fileArrLike) => {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    console.log('fileArrLike:', fileArrLike)
+    fileArrLike.forEach((filename) => {
+      fs.stat(path.join(dir, filename), (err, stats) => {
+        if (err) throw err;
+        if (stats.isFile()) {
+          console.log('test1:', path.extname(filename))
+          if (path.extname(filename) === '.txt') {
+            let filePath = path.join(dir, filename);
+            console.log(filePath);
+            appendContentSync(targetFile + '.txt', filePath)
+          }
+        } else {
+          getDirFilePathArr(path.join(dir, filename));
+        }
+      })
+    })
+  })
+}
+
+function appendContentSync (targetFile, file) {
+  let content = fs.readFileSync(file, 'utf-8');
+  console.log(666, content)
+  fs.appendFileSync(targetFile, content)
+}
+getDirFilePathArr(sourceDir);const fs = require('fs');
+const path = require('path');
+// 测试路径
+const sourceDir = './test';
+// 目标路径文件
+const targetFile = './targetTest';
+
+function getDirFilePathArr (dir) {
+  fs.readdir(dir, (err, fileArrLike) => {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    console.log('fileArrLike:', fileArrLike)
+    fileArrLike.forEach((filename) => {
+      fs.stat(path.join(dir, filename), (err, stats) => {
+        if (err) throw err;
+        if (stats.isFile()) {
+          console.log('test1:', path.extname(filename))
+          if (path.extname(filename) === '.txt') {
+            let filePath = path.join(dir, filename);
+            console.log(filePath);
+            appendContentSync(targetFile + '.txt', filePath)
+          }
+        } else {
+          getDirFilePathArr(path.join(dir, filename));
+        }
+      })
+    })
+  })
+}
+
+function appendContentSync (targetFile, file) {
+  let content = fs.readFileSync(file, 'utf-8');
+  console.log(666, content)
+  fs.appendFileSync(targetFile, content)
+}
+getDirFilePathArr(sourceDir);const fs = require('fs');
+const path = require('path');
+// 测试路径
+const sourceDir = './test';
+// 目标路径文件
+const targetFile = './targetTest';
+
+function getDirFilePathArr (dir) {
+  fs.readdir(dir, (err, fileArrLike) => {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    console.log('fileArrLike:', fileArrLike)
+    fileArrLike.forEach((filename) => {
+      fs.stat(path.join(dir, filename), (err, stats) => {
+        if (err) throw err;
+        if (stats.isFile()) {
+          console.log('test1:', path.extname(filename))
+          if (path.extname(filename) === '.txt') {
+            let filePath = path.join(dir, filename);
+            console.log(filePath);
+            appendContentSync(targetFile + '.txt', filePath)
+          }
+        } else {
+          getDirFilePathArr(path.join(dir, filename));
+        }
+      })
+    })
+  })
+}
+
+function appendContentSync (targetFile, file) {
+  let content = fs.readFileSync(file, 'utf-8');
+  console.log(666, content)
+  fs.appendFileSync(targetFile, content)
+}
+getDirFilePathArr(sourceDir);const fs = require('fs');
+const path = require('path');
+// 测试路径
+const sourceDir = './test';
+// 目标路径文件
+const targetFile = './targetTest';
+
+function getDirFilePathArr (dir) {
+  fs.readdir(dir, (err, fileArrLike) => {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    console.log('fileArrLike:', fileArrLike)
+    fileArrLike.forEach((filename) => {
+      fs.stat(path.join(dir, filename), (err, stats) => {
+        if (err) throw err;
+        if (stats.isFile()) {
+          console.log('test1:', path.extname(filename))
+          if (path.extname(filename) === '.txt') {
+            let filePath = path.join(dir, filename);
+            console.log(filePath);
+            appendContentSync(targetFile + '.txt', filePath)
+          }
+        } else {
+          getDirFilePathArr(path.join(dir, filename));
+        }
+      })
+    })
+  })
+}
+
+function appendContentSync (targetFile, file) {
+  let content = fs.readFileSync(file, 'utf-8');
+  console.log(666, content)
+  fs.appendFileSync(targetFile, content)
+}
+getDirFilePathArr(sourceDir);const fs = require('fs');
+const path = require('path');
+// 测试路径
+const sourceDir = './test';
+// 目标路径文件
+const targetFile = './targetTest';
+
+function getDirFilePathArr (dir) {
+  fs.readdir(dir, (err, fileArrLike) => {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    console.log('fileArrLike:', fileArrLike)
+    fileArrLike.forEach((filename) => {
+      fs.stat(path.join(dir, filename), (err, stats) => {
+        if (err) throw err;
+        if (stats.isFile()) {
+          console.log('test1:', path.extname(filename))
+          if (path.extname(filename) === '.txt') {
+            let filePath = path.join(dir, filename);
+            console.log(filePath);
+            appendContentSync(targetFile + '.txt', filePath)
+          }
+        } else {
+          getDirFilePathArr(path.join(dir, filename));
+        }
+      })
+    })
+  })
+}
+
+function appendContentSync (targetFile, file) {
+  let content = fs.readFileSync(file, 'utf-8');
+  console.log(666, content)
+  fs.appendFileSync(targetFile, content)
+}
+getDirFilePathArr(sourceDir);const fs = require('fs');
+const path = require('path');
+// 测试路径
+const sourceDir = './test';
+// 目标路径文件
+const targetFile = './targetTest';
+
+function getDirFilePathArr (dir) {
+  fs.readdir(dir, (err, fileArrLike) => {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    console.log('fileArrLike:', fileArrLike)
+    fileArrLike.forEach((filename) => {
+      fs.stat(path.join(dir, filename), (err, stats) => {
+        if (err) throw err;
+        if (stats.isFile()) {
+          console.log('test1:', path.extname(filename))
+          if (path.extname(filename) === '.txt') {
+            let filePath = path.join(dir, filename);
+            console.log(filePath);
+            appendContentSync(targetFile + '.txt', filePath)
+          }
+        } else {
+          getDirFilePathArr(path.join(dir, filename));
+        }
+      })
+    })
+  })
+}
+
+function appendContentSync (targetFile, file) {
+  let content = fs.readFileSync(file, 'utf-8');
+  console.log(666, content)
+  fs.appendFileSync(targetFile, content)
+}
+getDirFilePathArr(sourceDir);const fs = require('fs');
+const path = require('path');
+// 测试路径
+const sourceDir = './test';
+// 目标路径文件
+const targetFile = './targetTest';
+
+function getDirFilePathArr (dir) {
+  fs.readdir(dir, (err, fileArrLike) => {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    console.log('fileArrLike:', fileArrLike)
+    fileArrLike.forEach((filename) => {
+      fs.stat(path.join(dir, filename), (err, stats) => {
+        if (err) throw err;
+        if (stats.isFile()) {
+          console.log('test1:', path.extname(filename))
+          if (path.extname(filename) === '.txt') {
+            let filePath = path.join(dir, filename);
+            console.log(filePath);
+            appendContentSync(targetFile + '.txt', filePath)
+          }
+        } else {
+          getDirFilePathArr(path.join(dir, filename));
+        }
+      })
+    })
+  })
+}
+
+function appendContentSync (targetFile, file) {
+  let content = fs.readFileSync(file, 'utf-8');
+  console.log(666, content)
+  fs.appendFileSync(targetFile, content)
+}
+getDirFilePathArr(sourceDir);const fs = require('fs');
+const path = require('path');
+// 测试路径
+const sourceDir = './test';
+// 目标路径文件
+const targetFile = './targetTest';
+
+function getDirFilePathArr (dir) {
+  fs.readdir(dir, (err, fileArrLike) => {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    console.log('fileArrLike:', fileArrLike)
+    fileArrLike.forEach((filename) => {
+      fs.stat(path.join(dir, filename), (err, stats) => {
+        if (err) throw err;
+        if (stats.isFile()) {
+          console.log('test1:', path.extname(filename))
+          if (path.extname(filename) === '.txt') {
+            let filePath = path.join(dir, filename);
+            console.log(filePath);
+            appendContentSync(targetFile + '.txt', filePath)
+          }
+        } else {
+          getDirFilePathArr(path.join(dir, filename));
+        }
+      })
+    })
+  })
+}
+
+function appendContentSync (targetFile, file) {
+  let content = fs.readFileSync(file, 'utf-8');
+  console.log(666, content)
+  fs.appendFileSync(targetFile, content)
+}
+getDirFilePathArr(sourceDir);const fs = require('fs');
+const path = require('path');
+// 测试路径
+const sourceDir = './test';
+// 目标路径文件
+const targetFile = './targetTest';
+
+function getDirFilePathArr (dir) {
+  fs.readdir(dir, (err, fileArrLike) => {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    console.log('fileArrLike:', fileArrLike)
+    fileArrLike.forEach((filename) => {
+      fs.stat(path.join(dir, filename), (err, stats) => {
+        if (err) throw err;
+        if (stats.isFile()) {
+          console.log('test1:', path.extname(filename))
+          if (path.extname(filename) === '.txt') {
+            let filePath = path.join(dir, filename);
+            console.log(filePath);
+            appendContentSync(targetFile + '.txt', filePath)
+          }
+        } else {
+          getDirFilePathArr(path.join(dir, filename));
+        }
+      })
+    })
+  })
+}
+
+function appendContentSync (targetFile, file) {
+  let content = fs.readFileSync(file, 'utf-8');
+  console.log(666, content)
+  fs.appendFileSync(targetFile, content)
+}
+getDirFilePathArr(sourceDir);const fs = require('fs');
+const path = require('path');
+// 测试路径
+const sourceDir = './test';
+// 目标路径文件
+const targetFile = './targetTest';
+
+function getDirFilePathArr (dir) {
+  fs.readdir(dir, (err, fileArrLike) => {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    console.log('fileArrLike:', fileArrLike)
+    fileArrLike.forEach((filename) => {
+      fs.stat(path.join(dir, filename), (err, stats) => {
+        if (err) throw err;
+        if (stats.isFile()) {
+          console.log('test1:', path.extname(filename))
+          if (path.extname(filename) === '.txt') {
+            let filePath = path.join(dir, filename);
+            console.log(filePath);
+            appendContentSync(targetFile + '.txt', filePath)
+          }
+        } else {
+          getDirFilePathArr(path.join(dir, filename));
+        }
+      })
+    })
+  })
+}
+
+function appendContentSync (targetFile, file) {
+  let content = fs.readFileSync(file, 'utf-8');
+  console.log(666, content)
+  fs.appendFileSync(targetFile, content)
+}
+getDirFilePathArr(sourceDir);const fs = require('fs');
+const path = require('path');
+// 测试路径
+const sourceDir = './test';
+// 目标路径文件
+const targetFile = './targetTest';
+
+function getDirFilePathArr (dir) {
+  fs.readdir(dir, (err, fileArrLike) => {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    console.log('fileArrLike:', fileArrLike)
+    fileArrLike.forEach((filename) => {
+      fs.stat(path.join(dir, filename), (err, stats) => {
+        if (err) throw err;
+        if (stats.isFile()) {
+          console.log('test1:', path.extname(filename))
+          if (path.extname(filename) === '.txt') {
+            let filePath = path.join(dir, filename);
+            console.log(filePath);
+            appendContentSync(targetFile + '.txt', filePath)
+          }
+        } else {
+          getDirFilePathArr(path.join(dir, filename));
+        }
+      })
+    })
+  })
+}
+
+function appendContentSync (targetFile, file) {
+  let content = fs.readFileSync(file, 'utf-8');
+  console.log(666, content)
+  fs.appendFileSync(targetFile, content)
+}
+getDirFilePathArr(sourceDir);const fs = require('fs');
+const path = require('path');
+// 测试路径
+const sourceDir = './test';
+// 目标路径文件
+const targetFile = './targetTest';
+
+function getDirFilePathArr (dir) {
+  fs.readdir(dir, (err, fileArrLike) => {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    console.log('fileArrLike:', fileArrLike)
+    fileArrLike.forEach((filename) => {
+      fs.stat(path.join(dir, filename), (err, stats) => {
+        if (err) throw err;
+        if (stats.isFile()) {
+          console.log('test1:', path.extname(filename))
+          if (path.extname(filename) === '.txt') {
+            let filePath = path.join(dir, filename);
+            console.log(filePath);
+            appendContentSync(targetFile + '.txt', filePath)
+          }
+        } else {
+          getDirFilePathArr(path.join(dir, filename));
+        }
+      })
+    })
+  })
+}
+
+function appendContentSync (targetFile, file) {
+  let content = fs.readFileSync(file, 'utf-8');
+  console.log(666, content)
+  fs.appendFileSync(targetFile, content)
+}
+getDirFilePathArr(sourceDir);const fs = require('fs');
+const path = require('path');
+// 测试路径
+const sourceDir = './test';
+// 目标路径文件
+const targetFile = './targetTest';
+
+function getDirFilePathArr (dir) {
+  fs.readdir(dir, (err, fileArrLike) => {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    console.log('fileArrLike:', fileArrLike)
+    fileArrLike.forEach((filename) => {
+      fs.stat(path.join(dir, filename), (err, stats) => {
+        if (err) throw err;
+        if (stats.isFile()) {
+          console.log('test1:', path.extname(filename))
+          if (path.extname(filename) === '.txt') {
+            let filePath = path.join(dir, filename);
+            console.log(filePath);
+            appendContentSync(targetFile + '.txt', filePath)
+          }
+        } else {
+          getDirFilePathArr(path.join(dir, filename));
+        }
+      })
+    })
+  })
+}
+
+function appendContentSync (targetFile, file) {
+  let content = fs.readFileSync(file, 'utf-8');
+  console.log(666, content)
+  fs.appendFileSync(targetFile, content)
+}
+getDirFilePathArr(sourceDir);
