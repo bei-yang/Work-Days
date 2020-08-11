@@ -105,14 +105,17 @@
 
 
 
-function f (arr, res = []) {
-  let len = arr.length
-  if (len === 0) return ''
-  if (len === 1) return arr[0]
-  for (let i = 0; i < len; i++) {
-    res.concat(f(arr.slice(i + 1)))
-  }
-  return res
-}
+// function f (arr, res = []) {
+//   let len = arr.length
+//   if (len === 0) return ''
+//   if (len === 1) return arr[0]
+//   for (let i = 0; i < len; i++) {
+//     res.concat(f(arr.slice(i + 1)))
+//   }
+//   return res
+// }
 
-console.log(f([a, b, c]))
+// console.log(f([a, b, c]))
+
+
+
