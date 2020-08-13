@@ -24,7 +24,7 @@ class KVue {
     // 遍历该对象
     Object.keys(value).forEach(key => {
       this.defineReactive(value, key, value[key])
-      // 代理 data 中的属性到 vue 实例上
+      // 代理 data 中的属性到 vue 实例上8
       this.proxyData(key)
     })
   }
