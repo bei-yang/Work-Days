@@ -112,6 +112,6 @@ class Watcher {
 
 // 如何监听数组 push
 /*
-  数组增删改查没有实现触发 setter
+  数组增删改查没有实现触发 setter 编译
 */
 // 组件的实现
