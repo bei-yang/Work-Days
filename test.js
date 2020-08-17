@@ -333,3 +333,76 @@ Promise.prototype.race = function (promises) {
     }
   })
 }
+
+
+
+function test () {
+  this.a = 1
+  test.prototype.a = 1
+}
+
+// console.log(new test().a)
+
+
+console.log('1');
+
+setTimeout(function () {
+  console.log('2');
+  process.nextTick(function () {
+    console.log('3');
+  })
+  new Promise(function (resolve) {
+    console.log('4');
+    resolve();
+  }).then(function () {
+    console.log('5')
+  })
+})
+process.nextTick(function () {
+  console.log('6');
+})
+new Promise(function (resolve) {
+  console.log('7');
+  resolve();
+}).then(function () {
+  console.log('8')
+})
+
+setTimeout(function () {
+  console.log('9');
+  process.nextTick(function () {
+    console.log('10');
+  })
+  new Promise(function (resolve) {
+    console.log('11');
+    resolve();
+  }).then(function () {
+    console.log('12')
+  })
+})
+
+
+// 1，7，6，8，2，4，3，5，9，11，10，12
+
+function minCoinChange(coins,amount){
+  const cache=[]
+  const makeChange=value=>{
+    if(!value){
+      return []
+    }
+    if(cache[value]){
+      return cache[value]
+    }
+    let min=[]
+    let newMin
+    let newAmount
+    for(let i=0;i<coins.length;i++){
+      const coin=coins[i]
+      newAmount=value-coin
+      if(newAmount>=0){
+        newMin=makeChange(newAmount)
+      }
+      if(newAmount>=0&&(newMin.length<min.length-1||))
+    }
+  }
+}
