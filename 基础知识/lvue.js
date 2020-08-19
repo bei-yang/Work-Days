@@ -1,3 +1,4 @@
+// 深入理解vue的响应式原理
 class KVue {
   constructor(options) {
     this.$options = options // 挂载实例
