@@ -311,6 +311,27 @@ Promise.prototype.all = function (promises) {
   return new Promise((resolve, reject) => {
     let done = gen(promises.length, resolve)
     for (let i = 0, len = promises.length; i < len; i++) {
+      promises[i].then(data => {
+        done(i, data)
+      }, reject)
+    }
+  })
+}
+
+Promise.prototype.all = function (promises) {
+  const gen = function (times, cb) {
+    let result = []
+    let count = 0
+    return function (i, data) {
+      result[i] = data
+      if (++count === times) {
+        cb(result)
+      }
+    }
+  }
+  return new Promise((resolve, reject) => {
+    let done = gen(promises.length, resolve)
+    for (let i = 0, len = promises.length; i < len; i++) {
       promsies[i].then(data => {
         done(i, data)
       }, reject)
@@ -384,25 +405,25 @@ setTimeout(function () {
 
 // 1，7，6，8，2，4，3，5，9，11，10，12
 
-function minCoinChange(coins,amount){
-  const cache=[]
-  const makeChange=value=>{
-    if(!value){
+function minCoinChange (coins, amount) {
+  const cache = []
+  const makeChange = value => {
+    if (!value) {
       return []
     }
-    if(cache[value]){
+    if (cache[value]) {
       return cache[value]
     }
-    let min=[]
+    let min = []
     let newMin
     let newAmount
-    for(let i=0;i<coins.length;i++){
-      const coin=coins[i]
-      newAmount=value-coin
-      if(newAmount>=0){
-        newMin=makeChange(newAmount)
+    for (let i = 0; i < coins.length; i++) {
+      const coin = coins[i]
+      newAmount = value - coin
+      if (newAmount >= 0) {
+        newMin = makeChange(newAmount)
       }
-      if(newAmount>=0&&(newMin.length<min.length-1||))
+      if (newAmount >= 0 && (newMin.length < min.length - 1 ||))
     }
   }
 }

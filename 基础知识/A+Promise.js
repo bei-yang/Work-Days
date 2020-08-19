@@ -138,7 +138,7 @@ Promise.prototype.all = function (promises) {
       result[i] = data
       if (++count === times) {
         cb(result)
-      }
+      } 
     }
   }
   return new Promise((resolve, reject) => {
