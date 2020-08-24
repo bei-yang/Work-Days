@@ -1,4 +1,4 @@
-function sortVersion (list) {
+function sortVersion(list) {
   return list.sort((a, b) => {
     const arr1 = a.split('.')
     const arr2 = b.split('.')
@@ -13,6 +13,22 @@ function sortVersion (list) {
   })
 }
 
+function sortVersion(list) {
+  return list.sort((a, b) => {
+    const arr1 = a.split('.')
+    const arr2 = b.split('.')
+    let i = 0
+    while (true) {
+      let a1 = arr1[i]
+      let b1 = arr2[i++]
+      if (a1 === b1) continue
+      if (!a1 || !b1) return arr1.length - arr2.length
+      return a1 - b1
+    }
+  })
+}
+
+
 console.log(sortVersion(['1.0.0', '2.12.1', '1.2.3.4.5.6.7', '0.18.1']))
 
 class Depository {
@@ -20,7 +36,7 @@ class Depository {
     // 初始货物
     this.options = options
   }
-  transferIn (cargo, options = this.options) {
+  transferIn(cargo, options = this.options) {
     for (let prop in cargo) {
       if (options[prop]) {
         if (typeof (options[prop]) === 'object' && typeof (cargo[prop]) !== 'object') {
@@ -37,7 +53,7 @@ class Depository {
     }
     return options
   }
-  transferOut (cargo, options = this.options) {
+  transferOut(cargo, options = this.options) {
     for (let prop in cargo) {
       if (options[prop]) {
         if (typeof (options[prop]) === 'object' && typeof (cargo[prop]) !== 'object') {
@@ -72,6 +88,19 @@ let product = {
 }
 let test = new Depository(product)
 
-console.log(test.transferIn({ productA: { a: 3, c: { c1: 1, c2: 1, c3: 1 } } }))
+console.log(test.transferIn({
+  productA: {
+    a: 3,
+    c: {
+      c1: 1,
+      c2: 1,
+      c3: 1
+    }
+  }
+}))
 
-console.log(test.transferOut({ productA: { a: 7 } }))
+console.log(test.transferOut({
+  productA: {
+    a: 7
+  }
+}))
