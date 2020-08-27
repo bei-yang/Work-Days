@@ -28,6 +28,21 @@ function sortVersion(list) {
   })
 }
 
+function sortVersion(list) {
+  return list.sort((a, b) => {
+    const arr1 = a.split('.')
+    const arr2 = b.split('.')
+    let i = 0
+    while (true) {
+      let a1 = arr1[i]
+      let b1 = arr2[i++]
+      if (a1 === b1) continue
+      if (!a1 || !b1) return arr1.length - arr2.length
+      return a1 - b1
+    }
+  })
+}
+
 
 console.log(sortVersion(['1.0.0', '2.12.1', '1.2.3.4.5.6.7', '0.18.1']))
 
