@@ -29,6 +29,10 @@ function sortVersion(list) {
 }
 
 function sortVersion(list) {
+
+}
+
+function sortVersion(list) {
   return list.sort((a, b) => {
     const arr1 = a.split('.')
     const arr2 = b.split('.')
