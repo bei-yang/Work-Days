@@ -12,6 +12,8 @@ var longestCommonPrefix = function (strs) {
     if (ans === "")
       return ans;
   }
+
+
   return ans;
-};     
+};
 console.log(longestCommonPrefix(["aaa", "aa", "aaa"]))
