@@ -54,6 +54,23 @@ var lengthOfLongestSubstring = function (s) {
   return res
 }
 
+var leg = function (s) {
+  let num = 0
+  let res = 0
+  let m = ''
+  for (n of s) {
+    if (m.indexOf(n) === -1) {
+      m += n
+      num++
+      res = Math.max(num, res)
+    } else {
+      m += n
+      m = m.slice(m.indexOf(n) + 1)
+      num = m.length
+    }
+  }
+  return res
+}
 
 
 
