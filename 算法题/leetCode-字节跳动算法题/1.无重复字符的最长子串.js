@@ -125,6 +125,15 @@ const lengthof = function (s) {
       m += n
       m = m.slice(m.indexOf(n) + 1)
       num = m.length
+
     }
   }
 }
+
+/**
+ * @description: 位运算
+ * @param {type} 
+ * @return {type} 
+ */
+
+ 
