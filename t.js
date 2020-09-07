@@ -1,3 +1,11 @@
+/*
+ * @Descripttion: 
+ * @version: 0.0.1
+ * @Author: 林慕
+ * @Date: 2020-08-08 20:26:38
+ * @LastEditors: 林慕
+ * @LastEditTime: 2020-09-06 15:55:34
+ */
 const fs = require('fs')
 const path = require('path')
 // 测试路径
@@ -9,7 +17,7 @@ let targetNum = 1
 // 目标类型
 let targetType = '.txt'
 
-function getDirFilePathArr (dir) {
+function getDirFilePathArr(dir) {
   fs.readdir(dir, (err, fileArrLike) => {
     if (err) {
       console.log(err)
@@ -31,7 +39,7 @@ function getDirFilePathArr (dir) {
   })
 }
 
-function appendContentSync (targetFile, file) {
+function appendContentSync(targetFile, file) {
   let content = fs.readFileSync(file, 'utf-8');
   let fileName = targetFile + targetNum + targetType
   fs.stat(path.join(__dirname, fileName), (err, stats) => {
@@ -80,3 +88,8 @@ http.get('https://tpc.googlesyndication.com/simgad/13210648517053866893?sqp=4sqP
     })
   })
 })
+
+
+
+
+// [1,2,5,3,10,123,124,22]  去掉任何一个子项，求有最长子序列的哪一项的数组内容
