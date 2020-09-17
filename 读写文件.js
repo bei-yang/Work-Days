@@ -4,7 +4,7 @@
  * @Author: 林慕
  * @Date: 2020-08-08 20:26:38
  * @LastEditors: 林慕
- * @LastEditTime: 2020-09-06 15:55:34
+ * @LastEditTime: 2020-09-17 08:48:29
  */
 const fs = require('fs')
 const path = require('path')
@@ -88,8 +88,5 @@ http.get('https://tpc.googlesyndication.com/simgad/13210648517053866893?sqp=4sqP
     })
   })
 })
-
-
-
 
 // [1,2,5,3,10,123,124,22]  去掉任何一个子项，求有最长子序列的哪一项的数组内容
